@@ -1,6 +1,6 @@
 import sys
 import time
-from distutils.version import StrictVersion
+from packaging.version import Version as StrictVersion
 from platform import python_version
 
 import requests

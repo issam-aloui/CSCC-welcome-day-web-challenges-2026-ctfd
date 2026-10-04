@@ -71,6 +71,88 @@ services:
     networks:
         internal:
 
+  challenge-01:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./challenges/ch01:/app
+  challenge-02:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./challenges/ch02:/app
+  challenge-03:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./challenges/ch03:/app
+  challenge-04:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8004:8000"
+    volumes:
+      - ./challenges/ch04:/app
+  challenge-05:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8005:8000"
+    volumes:
+      - ./challenges/ch05:/app
+  challenge-06:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8006:8000"
+    volumes:
+      - ./challenges/ch06:/app
+  challenge-07:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8007:8000"
+    volumes:
+      - ./challenges/ch07:/app
+  challenge-08:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8008:8000"
+    volumes:
+      - ./challenges/ch08:/app
+  challenge-09:
+    build:
+      context: ./challenges
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8009:8000"
+    volumes:
+      - ./challenges/ch09:/app
+
 networks:
     default:
     internal:

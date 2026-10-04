@@ -1,9 +1,98 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container">
-    {{ content | safe }}
-  </div>
+  {% if request.path == "/" or request.path == "/index" %}
+    <div class="container py-5">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <img src="{{ url_for('views.files', path='csc_logo.svg') }}" alt="CSCC Logo" height="80" class="mb-4" onerror="this.style.display='none'">
+          <h1 class="display-4 fw-bold text-primary mb-3">CYBERSECURITY CLUB</h1>
+          <h2 class="h3 text-secondary mb-4">WELCOME CTF 2026</h2>
+          <p class="lead mb-4">Your first step into cybersecurity. No prior experience or hacking skills required — learn by doing!</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="{{ url_for('challenges.listing') }}" class="btn btn-primary btn-lg px-5 py-3 fw-bold shadow">
+              <i class="fas fa-terminal pe-2"></i> START CTF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card h-100 bg-card border-primary p-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h4 text-primary mb-3"><i class="fas fa-question-circle pe-2"></i> What's a CTF?</h3>
+              <p class="text-muted">Capture The Flag (CTF) is an information security competition where participants solve security puzzles and find secret strings called "flags" (e.g. <code>FLAG{EXAMPLE}</code>).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 bg-card border-primary p-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h4 text-primary mb-3"><i class="fas fa-graduation-cap pe-2"></i> For Beginners</h3>
+              <p class="text-muted">Never used Burp Suite or inspected HTML? Perfect! Our challenges guide you step-by-step from zero knowledge to your first web hack.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 bg-card border-primary p-4 shadow-sm">
+            <div class="card-body">
+              <h3 class="h4 text-primary mb-3"><i class="fas fa-laptop-code pe-2"></i> How to Play</h3>
+              <p class="text-muted">Explore the challenges page, read the scenarios, inspect website sources or separate challenge ports (8001-8009), and submit your flags to climb the leaderboard!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+          <h3 class="fw-bold">What You'll Learn</h3>
+          <p class="text-muted">Progressive beginner-friendly challenge curriculum</p>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="p-3 bg-card border rounded text-center">
+            <i class="fas fa-search fa-2x text-primary mb-2"></i>
+            <h5 class="mb-1">Recon & Source</h5>
+            <small class="text-muted">HTML Comments & Robots</small>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="p-3 bg-card border rounded text-center">
+            <i class="fas fa-cookie-bite fa-2x text-primary mb-2"></i>
+            <h5 class="mb-1">Cookies & JS</h5>
+            <small class="text-muted">Client State & Logic</small>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="p-3 bg-card border rounded text-center">
+            <i class="fas fa-shield-alt fa-2x text-primary mb-2"></i>
+            <h5 class="mb-1">Access Control</h5>
+            <small class="text-muted">IDOR & Broken Auth</small>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="p-3 bg-card border rounded text-center">
+            <i class="fas fa-bolt fa-2x text-primary mb-2"></i>
+            <h5 class="mb-1">Injection</h5>
+            <small class="text-muted">XSS & SQLi</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center mb-4">
+        <div class="col-12">
+          <p class="text-muted">
+            Connect with us on <a href="https://github.com/cscc-usdb" target="_blank" class="text-primary">GitHub</a> &bull; 
+            <a href="https://www.linkedin.com/company/cscclub/" target="_blank" class="text-primary">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container py-4">
+      {{ content | safe }}
+    </div>
+  {% endif %}
 {% endblock %}
 
 {% block scripts %}

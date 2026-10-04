@@ -28,6 +28,9 @@ fi
 # Initialize database
 flask db upgrade
 
+# Automatically seed CSCC Welcome CTF Challenges
+python seed_challenges.py || true
+
 # Start CTFd
 echo "Starting CTFd"
 exec gunicorn 'CTFd:create_app()' \

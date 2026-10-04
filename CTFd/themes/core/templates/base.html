@@ -10,6 +10,30 @@
 
   {% block stylesheets %}
     {{ Assets.css("assets/scss/main.scss") }}
+    <style>
+      :root {
+        --bs-primary: #3A86FF;
+        --bs-secondary: #4EA8DE;
+      }
+      [data-bs-theme="dark"] body {
+        background-color: #0B132B !important;
+        color: #E0FBFC !important;
+      }
+      [data-bs-theme="dark"] .card, [data-bs-theme="dark"] .bg-card, [data-bs-theme="dark"] .modal-content, [data-bs-theme="dark"] .navbar {
+        background-color: #1C2541 !important;
+        border-color: #3A86FF !important;
+        color: #E0FBFC !important;
+      }
+      [data-bs-theme="light"] body {
+        background-color: #F8F9FA !important;
+        color: #212529 !important;
+      }
+      [data-bs-theme="light"] .card, [data-bs-theme="light"] .bg-card, [data-bs-theme="light"] .modal-content {
+        background-color: #FFFFFF !important;
+        border-color: #3A86FF !important;
+        color: #212529 !important;
+      }
+    </style>
   {% endblock %}
 
   {{ Plugins.styles }}
